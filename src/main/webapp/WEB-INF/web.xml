@@ -8,8 +8,17 @@
     <servlet-name>HelloWorldServlet</servlet-name>
     <servlet-class>com.lizheyang.week2.HelloWorldServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.lizheyang.week3.RegisterServlet</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>HelloWorldServlet</servlet-name>
     <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
   </servlet-mapping>
 </web-app>

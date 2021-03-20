@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../week2/static/css/bootstrap.css">
 </head>
 <body>
-<form method="post" class="form-horizontal" action="#" target="iframe">
+<form method="post" class="form-horizontal" action="../register">
     <div class="form-group">
         <div class="col-sm-offset-4 col-sm-4">
             <h3>New User Registration</h3>
@@ -29,30 +29,30 @@
     <div class="form-group">
         <label for="password" class="col-sm-4 control-label">Password:</label>
         <div class="col-sm-2">
-            <input type="password" class="form-control" id="password" placeholder="password">
+            <input type="password" name="password" class="form-control" id="password" placeholder="password">
         </div>
     </div>
     <div class="form-group">
         <label for="email" class="col-sm-4 control-label">Email:</label>
         <div class="col-sm-2">
-            <input type="email" class="form-control" id="email" placeholder="email">
+            <input type="email" name="email" class="form-control" id="email" placeholder="email">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">Gender:</label>
         <div class="col-sm-8">
             <label for="male" class="radio-inline">
-                <input type="radio" id="male" name="sex" checked="checked">Male
+                <input type="radio" id="male" name="sex" value="male" checked="checked">Male
             </label>
             <label for="female" class="radio-inline">
-                <input type="radio" id="female" name="sex">Female
+                <input type="radio" id="female" name="sex" value="female">Female
             </label>
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">Date:</label>
         <div class="col-sm-2">
-            <input type="date" class="form-control" id="date">
+            <input type="date" name="birthDate" class="form-control" id="date">
         </div>
     </div>
     <div class="form-group">
@@ -102,24 +102,19 @@
     </div>
 </div>
 </form>
-<iframe id="iframe" name="iframe" style="display:none;"></iframe>
+<%--<iframe id="iframe" name="iframe" style="display:none;"></iframe>--%>
 
 <script src="../week2/static/js/jquery-3.5.1.js"></script>
 <script>
     $(function () {
-        $('#submit').click(function () {
-            if ($('#email').val() === '' ){
-                $('#emailError').css("display","block");
-            } else {
-                $('#emailError').css("display","none");
-            };
-
+        $('#name').blur(function () {
             if ($('#name').val() === ''){
                 $('#nameError').css("display","block");
             } else {
                 $('#nameError').css("display","none");
             };
-
+        });
+        $('#password').blur(function () {
             if ($('#password').val() === ''){
                 $('#pwdError').css("display","block");
             } else if($('#password').val().length < 8) {
@@ -128,7 +123,15 @@
             } else {
                 $('#charError').css("display","none");
             };
-
+        });
+        $('#email').blur(function () {
+            if ($('#email').val() === '' ){
+                $('#emailError').css("display","block");
+            } else {
+                $('#emailError').css("display","none");
+            };
+        });
+        $('#date').blur(function () {
             if ($('#date').val() === ''){
                 $('#dateError').css("display","block");
             } else {
