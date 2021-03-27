@@ -3,22 +3,54 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-    <servlet-name>HelloWorldServlet</servlet-name>
-    <servlet-class>com.lizheyang.week2.HelloWorldServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>RegisterServlet</servlet-name>
-    <servlet-class>com.lizheyang.week3.RegisterServlet</servlet-class>
-  </servlet>
+<!--  <display-name>Archetype Created Web Application</display-name>-->
+<!--  <servlet>-->
+<!--    <servlet-name>HelloWorldServlet</servlet-name>-->
+<!--    <servlet-class>com.lizheyang.week2.HelloWorldServlet</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet>-->
+<!--    <servlet-name>RegisterServlet</servlet-name>-->
+<!--    <servlet-class>com.lizheyang.week3.RegisterServlet</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet>-->
+<!--    <servlet-name>ConfigDemoServlet</servlet-name>-->
+<!--    <servlet-class>com.lizheyang.week4.ConfigDemoServlet</servlet-class>-->
+<!--    <init-param>-->
+<!--      <param-name>name</param-name>-->
+<!--      <param-value>LiZheyang</param-value>-->
+<!--    </init-param>-->
+<!--    <init-param>-->
+<!--      <param-name>StudentID</param-name>-->
+<!--      <param-value>2019211001000920</param-value>-->
+<!--    </init-param>-->
+<!--  </servlet>-->
 
-  <servlet-mapping>
-    <servlet-name>HelloWorldServlet</servlet-name>
-    <url-pattern>/hello</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>RegisterServlet</servlet-name>
-    <url-pattern>/register</url-pattern>
-  </servlet-mapping>
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>HelloWorldServlet</servlet-name>-->
+<!--    <url-pattern>/hello</url-pattern>-->
+<!--  </servlet-mapping>-->
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>RegisterServlet</servlet-name>-->
+<!--    <url-pattern>/register</url-pattern>-->
+<!--  </servlet-mapping>-->
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>ConfigDemoServlet</servlet-name>-->
+<!--    <url-pattern>/config</url-pattern>-->
+<!--  </servlet-mapping>-->
+    <context-param>
+      <param-name>driver</param-name>
+      <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+    </context-param>
+    <context-param>
+      <param-name>url</param-name>
+      <param-value>jdbc:sqlserver://127.0.0.1:1433;DatabaseName=userdb</param-value>
+    </context-param>
+    <context-param>
+      <param-name>username</param-name>
+      <param-value>sa</param-value>
+    </context-param>
+    <context-param>
+      <param-name>password</param-name>
+      <param-value>123456</param-value>
+    </context-param>
 </web-app>
