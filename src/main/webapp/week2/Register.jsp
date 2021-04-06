@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../week2/static/css/bootstrap.css">
 </head>
 <body>
+<%@include file="../header.jsp"%>
 <form method="post" class="form-horizontal" action="../register">
     <div class="form-group">
         <div class="col-sm-offset-4 col-sm-4">
@@ -140,5 +141,6 @@
         })
     })
 </script>
+<%@include file="../footer.jsp"%>
 </body>
 </html>
