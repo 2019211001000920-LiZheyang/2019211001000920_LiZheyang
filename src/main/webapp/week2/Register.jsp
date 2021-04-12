@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="../week2/static/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/week2/static/css/bootstrap.css">
 </head>
 <body>
 <%@include file="../header.jsp"%>

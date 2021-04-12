@@ -92,6 +92,7 @@ public class RegisterServlet extends HttpServlet {
 //        writer.println("<br>gender :" + gender);
 //        writer.println("<br>birthDate :" + birthDate);
 //        writer.close();
+        response.sendRedirect("login.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
