@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSessionBindingEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-@WebListener()
+@WebListener
 public class JDBCServletContextListener implements ServletContextListener,
         HttpSessionListener, HttpSessionAttributeListener {
 
