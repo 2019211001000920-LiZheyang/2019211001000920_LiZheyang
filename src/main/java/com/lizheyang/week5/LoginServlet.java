@@ -1,5 +1,8 @@
 package com.lizheyang.week5;
 
+import com.lizheyang.dao.UserDao;
+import com.lizheyang.model.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,32 +33,46 @@ public class LoginServlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String sql = "select * from usertable where username = ? and password = ?";
+        UserDao userDao = new UserDao();
         try {
-            PreparedStatement pst = con.prepareStatement(sql);
-            pst.setString(1,username);
-            pst.setString(2,password);
-            ResultSet rs = pst.executeQuery();
-            if (rs.next()) {
-//                pw.write("<h1>Login Success !</h1>");
-//                pw.write("<h1>Welcome,"+ username +"</h1>");
-                request.setAttribute("username", rs.getString("username"));
-                request.setAttribute("password", rs.getString("password"));
-                request.setAttribute("email", rs.getString("email"));
-                request.setAttribute("gender", rs.getString("gender"));
-                request.setAttribute("birthDate", rs.getString("birthDate"));
-                request.getRequestDispatcher("userinfo.jsp").forward(request,response);
+            User user = userDao.findByUsernamePassword(con,username,password);
+            if (user!=null) {
+                request.setAttribute("user",user);
+                request.getRequestDispatcher("WEB-INF/views/userinfo.jsp").forward(request,response);
             } else {
-//                pw.write("<h1>Username or Password is error!</h1>");
                 request.setAttribute("message", "username or password error!");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
+//        String sql = "select * from usertable where username = ? and password = ?";
+//        try {
+//            PreparedStatement pst = con.prepareStatement(sql);
+//            pst.setString(1,username);
+//            pst.setString(2,password);
+//            ResultSet rs = pst.executeQuery();
+//            if (rs.next()) {
+//                pw.write("<h1>Login Success !</h1>");
+//                pw.write("<h1>Welcome,"+ username +"</h1>");
+//                request.setAttribute("username", rs.getString("username"));
+//                request.setAttribute("password", rs.getString("password"));
+//                request.setAttribute("email", rs.getString("email"));
+//                request.setAttribute("gender", rs.getString("gender"));
+//                request.setAttribute("birthDate", rs.getString("birthDate"));
+//                request.getRequestDispatcher("userinfo.jsp").forward(request,response);
+//            } else {
+//                pw.write("<h1>Username or Password is error!</h1>");
+//                request.setAttribute("message", "username or password error!");
+//                request.getRequestDispatcher("login.jsp").forward(request, response);
+//            }
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
     }
 }
