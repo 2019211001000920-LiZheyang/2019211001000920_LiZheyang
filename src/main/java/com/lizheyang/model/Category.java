@@ -73,22 +73,24 @@ public class Category {
         ResultSet rs = pt.executeQuery();
         while(rs.next()){
             Category c=new Category();
-            c.setCategoryId(rs.getInt("categoryId"));
-            c.setCategoryName(rs.getString("categoryName"));
-            c.setDescription(rs.getString("description"));
+            c.setCategoryId(rs.getInt("CategoryId"));
+            c.setCategoryName(rs.getString("CategoryName"));
+            c.setDescription(rs.getString("Description"));
+//            System.out.println(c);
             list.add(c);
         }
+//        System.out.println(list.size());
         return list;
     }
 
     public static String findByCategoryId(Connection con, int categoryId) throws SQLException {
-        String sql = "select * from Category where category=?";
+        String sql = "select * from Category where CategoryId=?";
         PreparedStatement pt = con.prepareStatement(sql);
         pt.setInt(1,categoryId);
         ResultSet rs = pt.executeQuery();
         String categoryName = null;
         while(rs.next()){
-            categoryName = rs.getString("categoryName");
+            categoryName = rs.getString("CategoryName");
         }
         return categoryName;
     }

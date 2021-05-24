@@ -1,4 +1,4 @@
-
+<%@ page isELIgnored="false" %>
 <%@page import="com.lizheyang.model.User" %>
 <%
 String path = request.getContextPath();
