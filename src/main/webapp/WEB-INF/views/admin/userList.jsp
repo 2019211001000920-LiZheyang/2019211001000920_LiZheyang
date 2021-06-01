@@ -1,6 +1,6 @@
 <%@include file="../header.jsp" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
-<%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <section id="z`z`">
 		<div class="container">
 		<div class="breadcrumbs">
@@ -38,7 +38,7 @@
 					<!-- loop_start -->
 					<sql:setDataSource var="myDS"
 									   driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-									   url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=userdb"
+									   url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=userdb;"
 									   user="sa"
 									   password="123456"/>
 					<sql:query var="allUser" dataSource="${myDS}">
