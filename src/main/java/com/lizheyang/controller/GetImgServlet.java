@@ -1,7 +1,6 @@
 package com.lizheyang.controller;
 
 import com.lizheyang.dao.ProductDao;
-import com.lizheyang.model.Product;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

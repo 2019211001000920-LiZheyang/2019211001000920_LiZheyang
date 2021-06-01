@@ -6,15 +6,15 @@
 <!--  <display-name>Archetype Created Web Application</display-name>-->
 <!--  <servlet>-->
 <!--    <servlet-name>HelloWorldServlet</servlet-name>-->
-<!--    <servlet-class>com.lizheyang.week2.HelloWorldServlet</servlet-class>-->
+<!--    <servlet-class>HelloWorldServlet</servlet-class>-->
 <!--  </servlet>-->
 <!--  <servlet>-->
 <!--    <servlet-name>RegisterServlet</servlet-name>-->
-<!--    <servlet-class>com.lizheyang.week3.RegisterServlet</servlet-class>-->
+<!--    <servlet-class>RegisterServlet</servlet-class>-->
 <!--  </servlet>-->
 <!--  <servlet>-->
 <!--    <servlet-name>ConfigDemoServlet</servlet-name>-->
-<!--    <servlet-class>com.lizheyang.week4.ConfigDemoServlet</servlet-class>-->
+<!--    <servlet-class>ConfigDemoServlet</servlet-class>-->
 <!--    <init-param>-->
 <!--      <param-name>name</param-name>-->
 <!--      <param-value>LiZheyang</param-value>-->

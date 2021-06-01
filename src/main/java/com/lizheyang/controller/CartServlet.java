@@ -3,7 +3,6 @@ package com.lizheyang.controller;
 import com.lizheyang.dao.ProductDao;
 import com.lizheyang.model.Item;
 import com.lizheyang.model.Product;
-import javafx.beans.binding.ListExpression;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
