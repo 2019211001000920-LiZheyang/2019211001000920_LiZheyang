@@ -18,8 +18,8 @@
 <%--todo 1: use c:url to set url in action="validate.jsp" --%>
 <c:url var="a" value="validate.jsp"></c:url>
 <form action="${a}">
-    Username : <input type="text" name="username"><br>
-    Password : <input type="password" name="password"><br>
+    Username : <input type="text" name="username" value="${param.username}"><br>
+    Password : <input type="password" name="password" value="${param.password}"><br>
     <input type="submit" value="Login"/>
 </form>
 
