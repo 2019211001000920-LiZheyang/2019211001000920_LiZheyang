@@ -93,6 +93,7 @@ public class RegisterServlet extends HttpServlet {
 //        writer.println("<br>gender :" + gender);
 //        writer.println("<br>birthDate :" + birthDate);
 //        writer.close();
+        request.setAttribute("message","User Registered Successfully!");
         request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
     }
 

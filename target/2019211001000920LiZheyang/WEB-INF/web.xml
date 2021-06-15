@@ -54,6 +54,14 @@
       <param-value>123456</param-value>
     </context-param>
 
+    <filter>
+        <filter-name>LiZheyangFilter</filter-name>
+        <filter-class>com.lab2.LiZheyangFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LiZheyangFilter</filter-name>
+        <url-pattern>/lab2/welcome.jsp</url-pattern>
+    </filter-mapping>
     <welcome-file-list>
         <welcome-file>home</welcome-file>
 
